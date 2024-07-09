@@ -7,7 +7,6 @@
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
 }
-
 /* Navbar Start */
 #navbar{
     background: #f2f5f9;
@@ -60,11 +59,7 @@
     z-index: 2;
     position: relative;
     text-align: center; */
-
-
 }
-
-
 .custom-btn-bg:hover{
     background-color: #70d4d7;
 }
@@ -72,31 +67,24 @@
     margin-top: -50px;
     z-index: 2;
     position: relative;
-
 }
 
 /* destination */
-
-
-
 .swiper {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-  }
-
+}
   .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 50px;
     height: 50px;
   }
-
   .swiper-slide img {
     display: block;
     width: 100%;
   }
-
 
 /* About Start */
 .about{
@@ -124,11 +112,6 @@
     }
 }
 /* About End */
-
-
-
-
-
 /* Footer Start */
 #footer{
     width: 100%;
