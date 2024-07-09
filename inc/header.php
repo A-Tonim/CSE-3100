@@ -15,7 +15,7 @@
                               <a class="nav-link" href="#about">About</a>
                             </li> 
                             <li class="nav-item">
-                              <a class="nav-link " href="#Rooms">Rooms</a>
+                              <a class="nav-link " href="Rooms.php">Rooms</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="#Bus">Bus</a>
