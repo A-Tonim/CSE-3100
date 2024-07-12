@@ -19,25 +19,18 @@
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="#Bus">Bus</a>
-                            </li>
-                    
-                          </ul>
-                  
-                    <div class="d-flex ">
-                            
-                            <ul class="navbar-nav me-auto">
-                          
+                            </li>                    
+                          </ul>                  
+                    <div class="d-flex ">                           
+                            <ul class="navbar-nav me-auto">           
                               <li class="nav-item">
                                 <a class="nav-link"data-bs-toggle="modal" data-bs-target="#LoginModal" href="#Login">Login</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link"data-bs-toggle="modal" data-bs-target="#SignupModal" href="#Login">Signup</a>
-                              </li>
-                            
-                            </ul>
-                          
-                    </div>
-                    
+                              </li>                            
+                            </ul>                         
+                    </div>                   
           </div>
         </div>
       </nav>
@@ -57,13 +50,13 @@
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
                   <input type="email" class="form-control shadow-none"  >
-
                 </div>
+                
                 <div class="mb-4">
                   <label for="exampleInputEmail1" class="form-label">Password</label>
                   <input type="password" class="form-control shadow-none"  >
-                 
                 </div>
+
                   <div class="d-flex align-items-center justify-content-between mb-2">
                     <button type="submit" class="btn custom-btn-bg border shadow-none ">LOGIN</button>
                     <a href="javascript: void(0)" class="text-secodary text-decoration-none">Forgot Password</a>
