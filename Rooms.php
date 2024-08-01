@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Planner</title>
-
-<!--front awesome cdn link-->
-<?php require('inc/link.php')?>
-</head>
-<body>
+    <!--front awesome cdn link-->
+    <?php require('inc/link.php')?>
+  </head>
+  <body>
     <?php require('inc/header.php')?>
     <div class="my-5 px-4">
       <h2 class="fw-bold h-font text-center">Our Rooms</h2>
@@ -25,42 +24,40 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse flex-column align-items-stretch mt-2" id="filterdropdown"> 
-                    <div class="border bg-light p-3 rounded mb-3">
-                      <h5 class="mb-3" style="font-size: 18px;">CHEACK AVAILABILITY</h5>
-                      <label  class="form-label" style="font-weight: 500;">check in</label>
-                      <input type="date" class="form-control shadow-none"  >
-                      <label  class="form-label" style="font-weight: 500;">check out</label>
-                      <input type="date" class="form-control shadow-none"  >
-                     </div>
-                    <div class="border bg-light p-3 rounded mb-3">
-                      <h5 class="mb-3" style="font-size: 18px;">FACILITIES</h5>
-                      <div class="mb-2">
-                        <input type="checkbox" id="f1" class="form-check-input shadow-none me-1"  >
+                  <div class="border bg-light p-3 rounded mb-3">
+                    <h5 class="mb-3" style="font-size: 18px;">CHEACK AVAILABILITY</h5>
+                    <label  class="form-label" style="font-weight: 500;">check in</label>
+                    <input type="date" class="form-control shadow-none"  >
+                    <label  class="form-label" style="font-weight: 500;">check out</label>
+                    <input type="date" class="form-control shadow-none"  >
+                  </div>
+                  <div class="border bg-light p-3 rounded mb-3">
+                    <h5 class="mb-3" style="font-size: 18px;">FACILITIES</h5>
+                    <div class="mb-2">
+                      <input type="checkbox" id="f1" class="form-check-input shadow-none me-1"  >
                       <label  class="form-check-label" for="f1">Free Internet</label>
-                      </div>
-                      <div class="mb-2">
-                        <input type="checkbox" id="f2" class="form-check-input shadow-none me-1"  >
+                    </div>
+                    <div class="mb-2">
+                      <input type="checkbox" id="f2" class="form-check-input shadow-none me-1"  >
                       <label  class="form-check-label" for="f2">Parking</label>
-                      </div>
-                      <div class="mb-2">
-                        <input type="checkbox" id="f3" class="form-check-input shadow-none me-1"  >
+                    </div>
+                    <div class="mb-2">
+                      <input type="checkbox" id="f3" class="form-check-input shadow-none me-1"  >
                       <label  class="form-check-label" for="f3">Complementary Breakfast</label>
-                      </div>
-                    </div>      
-                    <div class="border bg-light p-3 rounded mb-3">
-                      <h5 class="mb-3" style="font-size: 18px;">GUESTS</h5>
-                      <div class="d-flex">
-                        <div class="me-2">
+                    </div>
+                  </div>      
+                  <div class="border bg-light p-3 rounded mb-3">
+                    <h5 class="mb-3" style="font-size: 18px;">GUESTS</h5>
+                    <div class="d-flex">
+                      <div class="me-2">
                         <label  class="form-label" >Adults</label>
                         <input type="number" class="form-control shadow-none"  >
-                        </div>
-                        <div>
-                        <label  class="form-label" >Children</label>
-                        <input type="number" class="form-control shadow-none"  >
-                        </div>
                       </div>
-                   
-                 
+                    <div>
+                    <label  class="form-label" >Children</label>
+                    <input type="number" class="form-control shadow-none"  >
+                  </div>
+                      </div>
                     </div>             
                 </div>
               </div>
@@ -308,23 +305,17 @@
                     4 Children
                   </span>                  
                 </div>
-
               </div>
               <div class="col-md-2 text-center">
                 <h6 class="mb-4  text-dark text-wrap"> $200 per night</h6>
                 <a href="#" class="btn btn-sm w-100 btn custom-btn-bg border   shadow mb-2 ">Book now</a>
                 <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-3 ">More Details</a>
-
               </div>
             </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
-
   <br><br><br>
     <?php require('inc/footer.php')?>
 </body>

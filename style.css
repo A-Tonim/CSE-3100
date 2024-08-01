@@ -145,4 +145,8 @@
 .social-links i:hover{
     background:#70d4d7 ;
 }
+#dashboard-menu{
+    z-index: ll;
+}
+
 /* Footer End */
