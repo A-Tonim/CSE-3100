@@ -4,15 +4,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel-Settings</title>
     <?php require('inc/link.php'); ?>
-  </head>
+   </head>
    <body class="bg-light">
       <?php require('inc/header.php'); ?>
-        <div class="container-fluid" id="main-content">
+         <div class="container-fluid" id="main-content">
             <div class="row">
                <div class="col-lg-10 ms-auto p-4 overflow-hidden">
                  <h3 class="mb-4">SETTINGS</h3>
@@ -30,6 +30,33 @@
                         <p class="card-text" id="site_title"></p>
                         <h6 class="card-subtitle mb-1 fw-bold">About Us</h6>
                         <p class="card-text" id="site_about"></p>
+                     </div>
+                  </div>
+
+                  <!-- General settings modal -->
+                  <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                        <form id="general_s_form">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h5 class="modal-title">General Settings</h5>
+                              </div>
+                              <div class="modal-body">
+                                 <div class="mb-3">
+                                    <label class="form-label fw-bold">Site Title</label>
+                                    <input type="text" name="site_title" id="site_title_inp" class="form-control shadow-none" required>
+                                 </div>
+                                 <div class="mb-3">
+                                    <label  class="form-label fw-bold">About Us</label>
+                                    <textarea name="site_about" id="site_about_inp" class="form-control shadow-none" rows="6" required></textarea>
+                                 </div>
+                              </div>
+                              <div class="modal-footer">
+                                 <button type="" onclick = "site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                 <button type="submit" onclick = "" class="btn custom-btn-bg text-white shadow-none">SUBMIT</button>
+                              </div>
+                           </div>
+                        </form>
                      </div>
                   </div>
 
@@ -218,38 +245,11 @@
                         </form>
                      </div>
                   </div>
-                  
-                  <!-- General settings modal -->
-                  <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                        <form id="general_s_form">
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <h5 class="modal-title">General Settings</h5>
-                              </div>
-                              <div class="modal-body">
-                                 <div class="mb-3">
-                                    <label class="form-label fw-bold">Site Title</label>
-                                    <input type="text" name="site_title" id="site_title_inp" class="form-control shadow-none" required>
-                                 </div>
-                                 <div class="mb-3">
-                                    <label  class="form-label fw-bold">About Us</label>
-                                    <textarea name="site_about" id="site_about_inp" class="form-control shadow-none" rows="6" required></textarea>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="modal-footer">
-                              <button type="button" onclick = "site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                              <button type="submit" onclick = "" class="btn custom-btn-bg text-white shadow-none">SUBMIT</button>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-
                </div>
             </div>
          </div>
       <?php require('inc/scripts.php'); ?>
       <script src="scripts/settings.js"></script>
+      <link rel="stylesheet" href="style.css">
    </body>
 </html> 

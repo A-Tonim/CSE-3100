@@ -57,5 +57,6 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin']==true)){
         }
         ?>
         <?php require('inc/scripts.php') ?>
+        <link rel="stylesheet" href="style.css">
     </body>
 </html>

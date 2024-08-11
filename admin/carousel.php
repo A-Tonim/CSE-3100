@@ -55,5 +55,6 @@
             </div>
         <?php require('inc/scripts.php'); ?>
         <script src="scripts/carousel.js"></script>
+        <link rel="stylesheet" href="style.css">
     </body>
 </html> 

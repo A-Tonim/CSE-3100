@@ -62,6 +62,12 @@
         xhr.open("POST","ajax/settings_crud.php",true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
+           if(this.responseText == 1){
+              alert('success','Site has been shutdown!');
+            }
+            else{
+                alert('success','Shutdown mode off!');
+            }
             get_general();
         }
         xhr.send('upd_shutdown='+val);
@@ -80,7 +86,7 @@
                 document.getElementById(contacts_p_id[i]).innerText = contacts_data[i+1];
             }
             iframe.src = contacts_data[9];
-            contacts.inp(contacts_data);
+            contacts_inp(contacts_data);
         }
         xhr.send('get_contacts');
     }

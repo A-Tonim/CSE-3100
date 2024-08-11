@@ -128,5 +128,6 @@
         </div>
         <?php require('inc/scripts.php'); ?>
         <script src="scripts/features_facilities.js"></script>
+        <link rel="stylesheet" href="style.css">
     </body>
 </html>

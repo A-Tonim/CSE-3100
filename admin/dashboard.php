@@ -21,5 +21,6 @@
         </div>
     </div>
     <?php require('inc/scripts.php'); ?>
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>

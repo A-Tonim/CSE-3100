@@ -388,5 +388,6 @@
             get_all_rooms();
         }
     </script>
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>
