@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Planner - FACILITIES</title>
-    <!--front awesome cdn link-->
     <?php require('inc/link.php')?>
     <style>
       .pop:hover{

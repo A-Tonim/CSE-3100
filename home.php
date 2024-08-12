@@ -119,6 +119,10 @@
       </div>    
     <!-- Popular Destinations End-->
 
+    <!-- Facilities Start-->
+     
+    <!-- Facilities End-->
+
     <!-- About Start -->
       <section class="about" id="about">
         <div class="container">
@@ -139,10 +143,70 @@
         </div>
       </section>
     <!-- About End -->
-      <br><br><br>
-      <br><br><br>
+    
+    <!-- Reach Us Start -->
+      <?php
+        $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+        $values = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q,$values,'i'));
+      ?>
+      <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+              <iframe class="w-100 rounded mb-4" height="320px" src="<?php echo $contact_r['iframe'] ?>" loading="lazy"></iframe>
+              <h5>Address</h5>
+              <a href="<?php echo $contact_r['gmap'] ?>" target="_blank" class="d-inline-block mb-2 text-decoration-none text-dark">
+                <i class="bi bi-geo-alt-fill"></i> <?php echo $contact_r['address'] ?>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <div class="bg-white p-4 rounded mb-4">
+                <h5>Call us</h5>
+                <a href="tel: <?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                  <i class="bi bi-telephone-fill"><?php echo $contact_r['pn1'] ?></i>
+                </a>
+                <br>
+                <?php
+                  if($contact_r['pn2']!=''){
+                    echo<<<data
+                      <a href="tel: $contact_r[pn2]>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> $contact_r[pn2]
+                      </a>
+                    data;
+                  }
+                ?>
+              </div>
+              <div class="bg-white p-4 rounded mb-4">
+                  <h5>Email</h5>
+                  <a href="mail: <?php $contact_r['email'] ?>" class="d-inline-block mb-3">
+                  <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email'] ?>
+              </div>
+              <div class="bg-white p-4 rounded mb-4">
+                <?php 
+                  if($contact_r['tw'] != ''){
+                    echo<<<data
+                    <a href="$contact_r[tw]" class="d-inline-block mb-3">
+                        <i class="bi bi-twitter me-1"></i> Twitter
+                    </a>
+                    data;
+                  }
+                ?>
+                <br>
+                <a href="<?php echo $contact_r['fb'] ?>" class="d-inline-block mb-3">
+                    <i class="bi bi-facebook me-1"></i> Facebook
+                </a>
+                <br>
+                <a href="<?php echo $contact_r['insta'] ?> class="d-inline-block">
+                    <i class="bi bi-instagram me-1"></i> Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Reach Us End -->
+     
     <!-- Home Section End -->
-
     <?php require('inc/footer.php')?>
     <script>
       var swiper = new Swiper(".swiper-container", {
@@ -152,7 +216,7 @@
         autoplay: {
           delay: 2500,
           disableonInteraction: false,
-        }
+        },
       });
     </script>
   </body>

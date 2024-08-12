@@ -11,14 +11,14 @@
             <a class="nav-link active" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li> 
-          <li class="nav-item">
             <a class="nav-link " href="Rooms.php">Rooms</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="facilities.php">Facilities</a>
-          </li>                    
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.php">About Us</a>
+          </li>                       
         </ul>                  
         <div class="d-flex">
           <?php
