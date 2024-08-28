@@ -1,3 +1,4 @@
+
 <!-- Footer Start -->
   <footer id="footer">
     <a  href="home.html" id="logo"><span>Tour</span>Planner</a>
@@ -13,28 +14,35 @@
 <!-- Footer End -->
 
 <!-- custom js link -->=
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
 <script>
   function alert(type,msg,position='body')
   {
-    let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
-    let element = document.createElement('div');
-    element.innerHTML = `
-    <div class="alert ${bs_class} alert-dismissible fade show custom-alert" role="alert">
-        <strong class="me-3">${msg}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    `;
-    document.body.append(element);
+      let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
+      let element = document.createElement('div');
+      element.innerHTML = `
+      <div class="alert ${bs_class} alert-dismissible fade show" role="alert">
+          <strong class="me-3">${msg}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      `;
+      if(position == 'body'){
+          document.body.append(element);
+          element.classList.add('custom-alert');
+      }
+      else{
+          document.getElementById(position).appendChild(element);
+      }
+      setTimeout(remAlert, 3000);
   }
-  function setActive()
-  {
+  function remAlert(){
+      document.getElementsByClassName('alert')[0].remove();
+  }
+  let Signup_form = document.getElementById('Signup-form');
 
-  }
-    let Signup_form = document.getElementById('Signup-form');
-    Signup_form.addEventListener('submit', (e)=>{
+  Signup_form.addEventListener('submit', (e)=>{
     e.preventDefault();
     let data = new FormData();
     data.append('name',Signup_form.elements['name'].value);
@@ -80,6 +88,7 @@
     }
     xhr.send(data);
   });
+
   let login_form = document.getElementById('login-form');
   
   login_form.addEventListener('submit', (e)=>{
@@ -109,43 +118,24 @@
         alert('error',"Incorrect Password!");
       }
       else{
-        window.location = window.location.pathname;
+        let fileurl = window.location.href.split('/').pop().split('?').shift();
+        if(fileurl == 'room_details.php'){
+          window.location = window.location.href;
+        }
+        else{
+          window.location = window.location.pathname;
+        }
       }
     }
     xhr.send(data);
   });
 
-  setActive();
-  var swiper = new Swiper(".Swiper-destination",{
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    slidesPerView:"4",
-    loop:true,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    breakpoints:{
-      320:{
-        sliderPerView:1
-      },
-      640:{
-        sliderPerView:2
-      },
-      768:{
-        slidesPerView:3
-      },
-      1024:{
-        slidesPerView:4
-      }
+  function checkLoginToBook(status,room_id){
+    if(status){
+      window.location.href = 'confirm_booking.php?id='+room_id;
     }
-  });
+    else{
+      alert('error','Please Login to book room!');
+    }
+  }
 </script>

@@ -17,7 +17,6 @@
             <div class="row">
                 <div class="col-lg-10 ms-auto p-4 overflow-hidden">
                     <h3 class="mb-4">FEATURES & FACILITIES</h3>
-
                     <!-- Features -->
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body"> 
