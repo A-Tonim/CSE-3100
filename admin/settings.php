@@ -53,7 +53,7 @@
                               </div>
                               <div class="modal-footer">
                                  <button type="" onclick = "site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                 <button type="submit" onclick = "" class="btn custom-btn-bg text-white shadow-none">SUBMIT</button>
+                                 <button type="submit" onclick = "upd_general(site_title.value,site_about.value)" class="btn custom-btn-bg text-white shadow-none">SUBMIT</button>
                               </div>
                            </div>
                         </form>

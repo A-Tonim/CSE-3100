@@ -10,10 +10,10 @@
         $frm_data = filteration($_POST);
         $flag = 0;
 
-        $q1 = "INSERT INTO `rooms`(`name`, `area`, `price`, `quantity`, `adult`, `children`, `description`) VALUES (?,?,?,?,?,?,?)";
-        $values = [$frm_data['name'],$frm_data['area'],$frm_data['price'],$frm_data['quantity'],$frm_data['adult'],$frm_data['children'],$frm_data['desc']];
+        $q1 = "INSERT INTO `rooms`(`name`, `area`, `price`, `adult`, `children`, `description`) VALUES (?,?,?,?,?,?)";
+        $values = [$frm_data['name'],$frm_data['area'],$frm_data['price'],$frm_data['adult'],$frm_data['children'],$frm_data['desc']];
 
-        if(insert($q1,$values,'siiiiis')){
+        if(insert($q1,$values,'siiiis')){
            $flag = 1;
         }
         $room_id = mysqli_insert_id($con);
@@ -75,7 +75,6 @@
                         </span>
                     </td>
                     <td>৳$row[price]</td>
-                    <td>$row[quantity]</td>
                     <td>$status</td>
                     <td>
                         <button type='button' onclick='edit_details($row[id])' class='btn btn-primary shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#edit-room'>
@@ -125,10 +124,10 @@
         $frm_data = filteration($_POST);
         $flag = 0;
 
-        $q1 = "UPDATE `rooms` SET `name`=?,`area`=?,`price`=?,`quantity`=?,
+        $q1 = "UPDATE `rooms` SET `name`=?,`area`=?,`price`=?,
             `adult`=?,`children`=?,`description`=? WHERE `id`=?";
-        $values = [$frm_data['name'],$frm_data['area'],$frm_data['price'],$frm_data['quantity'],$frm_data['adult'],$frm_data['children'],$frm_data['desc'],$frm_data['room_id']];
-        if(update($q1,$values,'siiiiisi')){
+        $values = [$frm_data['name'],$frm_data['area'],$frm_data['price'],$frm_data['adult'],$frm_data['children'],$frm_data['desc'],$frm_data['room_id']];
+        if(update($q1,$values,'siiiisi')){
             $flag = 1;
         }
         $del_features = delete("DELETE FROM `room_features` WHERE `room_id`=?",[$frm_data['room_id']],'i');
@@ -210,20 +209,9 @@
         $path = ROOMS_IMG_PATH;
         while($row = mysqli_fetch_assoc($res))
         {
-            if($row['thumb'] == 1){
-                $thumb_btn = "<i class='bi bi-check-lg text-light bg-success px-2 py-1 rounded fs-5'></i>";
-            }
-            else{
-                $thumb_btn = "
-                    <button onclick='thumb_image($row[sr_no],$row[room_id])' class='btn btn-secondary shadow-none'>
-                        <i class='bi bi-check-lg'></i>
-                    </button>
-                ";
-            }
             echo<<<data
                 <tr class='align-middle'>
                     <td><img src='$path$row[image]' class='img-fluid'</td>
-                    <td>$thumb_btn</td>
                     <td>
                         <button onclick='rem_image($row[sr_no],$row[room_id])' class='btn btn-danger shadow-none'>
                             <i class='bi bi-trash'></i>
@@ -248,20 +236,6 @@
         else{
             echo 0;
         }
-    }
-    if(isset($_POST['thumb_image']))
-    {
-        $frm_data = filteration($_POST);
-
-        $pre_q = "UPDATE `room_images` SET `thumb`= ? WHERE `room_id`=?";
-        $pre_v = [0,$frm_data['room_id']];
-        $pre_res = update($pre_q,$pre_v,'ii');
-
-        $q = "UPDATE `room_images` SET `thumb`= ? WHERE `sr_no`=?  AND `room_id`=?";
-        $v = [1,$frm_data['image_id'],$frm_data['room_id']];
-        $res = update($q,$v,'iii');
-
-        echo $res;
     }
     if(isset($_POST['remove_room']))
     {

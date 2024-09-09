@@ -11,7 +11,7 @@
             <a class="nav-link active" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="Rooms.php">Rooms</a>
+            <a class="nav-link active" href="Hotels.php">Hotels</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="facilities.php">Facilities</a>
@@ -28,7 +28,7 @@
               echo<<<data
               <div class="btn-group">
                 <button type="button" class="btn btn-outline-dark shadow-none dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                  <img src="$path$_SESSION[uPic]" style="width: 25px; height: 25px" class="me-1">
+                  <img src="$path$_SESSION[uPic]" style="width: 25px; height: 25px" class="me-1 rounded-circle">
                   $_SESSION[uName]
                 </button>
                 <ul class="dropdown-menu dropdown-menu-lg-end">

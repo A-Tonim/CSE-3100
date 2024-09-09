@@ -11,7 +11,6 @@
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
 }
-
 /* Navbar Start */
 .navbar{
     background: #f2f5f9;
@@ -41,7 +40,7 @@
     transition: 0.5s ease;
 }
 .nav-item .nav-link:hover{
-    background: blue;
+    background: #2ec1ac;
     color: white;
 }
 #navbar form button{
@@ -61,8 +60,9 @@
 }
 .custom-alert{
     position: fixed;
-    top: 70px;
+    top: 55px;
     right: 25px;
+    z-index: llll;
 }
 #dashboard-menu{
     position: fixed;
@@ -78,3 +78,61 @@
        margin-top: 60px; 
     }
 }
+/* destination start*/
+.swiper{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+/* destination start*/
+/* Footer Start */
+#footer{
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+    background: #f9f9f9;
+}
+#logo{
+    font-size: 36px;
+    font-weight: 550;
+    color: rgb(245, 220, 96);
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+#logo span{
+    color: #70d4d7;
+}
+#footer h1{
+    font-weight: 600;
+    padding-top: 30px;
+    text-shadow: 0px 0px 1px black;
+}
+#footer h1 span{
+    color: #70d4d7;
+}
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-links i:hover{
+    background:#70d4d7 ;
+}
+/* Footer End */

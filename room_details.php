@@ -19,12 +19,13 @@
         redirect('Rooms.php');
       }
       $room_data = mysqli_fetch_assoc($room_res);
+    
     ?>
     <div class="container">
       <div class="row">
         <div class="col-12 my-5 px-4">
           <h2 class="fw-bold"><?php echo $room_data['name'] ?></h2>
-          <div style="font-size: 14ox;">
+          <div style="font-size: 14px;">
             <a href="home.php" class="text-secondary text-decoration-none">HOME</a>
             <span class="text-secondary"> > </span>
             <a href="Rooms.php" class="text-secondary text-decoration-none">ROOMS</a>
@@ -34,7 +35,6 @@
           <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <?php
-                $room_img = ROOMS_IMG_PATH."thumbnail.jpg";
                 $img_q = mysqli_query($con,"SELECT * FROM `room_images` 
                 WHERE `room_id`='$room_data[id]'");
                 if(mysqli_num_rows($img_q)>0){

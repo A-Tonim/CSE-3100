@@ -34,7 +34,6 @@
                                         <th scope="col">Area</th>
                                         <th scope="col">Guests</th>
                                         <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -73,10 +72,6 @@
                                 <input type="number" min="1" name="price" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Quantity</label>
-                                <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold">Adult (Max.)</label>
                                 <input type="number" min="1" name="adult" class="form-control shadow-none" required>
                             </div>
@@ -92,10 +87,10 @@
                                         while($opt = mysqli_fetch_assoc($res)){
                                             echo"
                                             <div class='col-md-3 mb-1'>
-                                                    <label>
-                                                        <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
-                                                        $opt[name]
-                                                    </label>
+                                                <label>
+                                                    <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
+                                                    $opt[name]
+                                                </label>
                                             </div>
                                             ";
                                         }
@@ -159,10 +154,6 @@
                                 <input type="number" min="1" name="price" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Quantity</label>
-                                <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold">Adult (Max.)</label>
                                 <input type="number" min="1" name="adult" class="form-control shadow-none" required>
                             </div>
@@ -178,10 +169,10 @@
                                         while($opt = mysqli_fetch_assoc($res)){
                                             echo"
                                             <div class='col-md-3 mb-1'>
-                                                    <label>
-                                                        <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
-                                                        $opt[name]
-                                                    </label>
+                                                <label>
+                                                    <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
+                                                    $opt[name]
+                                                </label>
                                             </div>
                                             ";
                                         }
@@ -246,7 +237,7 @@
                             <thead>
                                 <tr class="bg-dark text-light sticky-top">
                                     <th scope="col" width="60%">Image</th>
-                                    <th scope="col">Thumb</th>
+                                    <!-- <th scope="col">Thumb</th> -->
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>

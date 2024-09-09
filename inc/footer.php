@@ -1,8 +1,12 @@
-
+<?php
+  $settings_q = "SELECT `site_about` FROM `settings` WHERE `sr_no`=?";
+  $values = [1];
+  $settings_r = mysqli_fetch_assoc(select($settings_q,$values,'i'));
+?>
 <!-- Footer Start -->
   <footer id="footer">
-    <a  href="home.html" id="logo"><span>Tour</span>Planner</a>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fugiat, ipsa quos nulla qui alias.</p>
+    <a href="home.html" id="logo"><span>Tour</span>Planner</a>
+    <h6><?php echo $settings_r['site_about'] ?></h6>
     <div class="social-links">
       <i class="fa-brands fa-twitter"></i>
       <i class="fa-brands fa-facebook"></i>

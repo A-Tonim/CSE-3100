@@ -49,7 +49,7 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin']==true)){
                 $row = mysqli_fetch_assoc($res);
                 $_SESSION['adminLogin'] = true;
                 $_SESSION['adminId'] = $row['sr_no'];
-                redirect('rooms.php');
+                redirect('new_bookings.php');
             }
             else{
                 alert('error','Login failed - Invalied Credentials!');

@@ -17,37 +17,6 @@
     <div class="my-5 px-4">
       <h2 class="fw-bold h-font text-center">ABOUT US</h2>
     </div>
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4 px-4">
-          <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-            <img src="images/about/hotel.svg" width="70px">
-            <h4 class="mt-3">100+ Rooms</h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4 px-4">
-          <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-            <img src="images/about/customers.svg" width="70px">
-            <h4 class="mt-3">200+ CUSTOMERS</h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4 px-4">
-          <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-            <img src="images/about/rating.svg" width="70px">
-            <h4 class="mt-3">150+ REVIEWS</h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4 px-4">
-          <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-            <img src="images/about/staff.svg" width="70px">
-            <h4 class="mt-3">200+ STAFS</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="my-5 fw-bold h-font text-center">MANAGEMENT TEAM</h3>
     <div class="container px-4">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper mb-5">

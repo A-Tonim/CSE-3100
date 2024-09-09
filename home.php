@@ -30,98 +30,67 @@
         </div>
       </div>
     <!-- Carousel End-->
-   
-    <!-- booking availablity Start-->
-      <div class="container upper-slider">
-        <div class="row ">
-          <div class="col-lg-12 bg-white shadow p-4 rounded">
-            <h5 class="mb-4">check booking availability </h5>
-            <form >
-              <div class="row align-items-center">
-                <div class="col-lg-3 mb-3">
-                  <label  class="form-label" style="font-weight: 500;">check in</label>
-                  <input type="date" class="form-control shadow-none"  >
-                </div>    
-                <div class="col-lg-3 mb-3">
-                  <label  class="form-label" style="font-weight: 500;">check out</label>
-                  <input type="date" class="form-control shadow-none"  >                                  
+
+    <!-- Hotel Start -->
+     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Our Hotels</h2>
+     <div class="container">
+      <div class="row">
+        <?php
+          $hotel_res = select("SELECT * FROM `hotels` WHERE `removed`=? LIMIT 3",[0],'i');
+          while($hotel_data = mysqli_fetch_assoc($hotel_res))
+          {
+            $rm_q = mysqli_query($con,"SELECT r.name FROM `rooms` r
+            INNER JOIN `hotel_rooms` hrms ON r.id = hrms.room_id
+            WHERE hrms.hotel_id = '$hotel_data[id]'");
+
+            $room_data = "";
+          
+            while($rm_row = mysqli_fetch_assoc($rm_q)){
+              $room_data .= 
+                "<span class='badge rounded-pill  bg-light text-dark text-wrap me-1 mb-1'>
+                  $rm_row[name]
+                </span>";
+            }
+
+            //get thumbnail of image
+            $thumb_q = mysqli_query($con,"SELECT * FROM `hotel_images` 
+            WHERE `hotel_id`='$hotel_data[id]'");
+            
+            $thumb_res = mysqli_fetch_assoc($thumb_q);
+            $hotel_thumb = HOTELS_IMG_PATH.$thumb_res['image'];
+            
+            //print hotel card
+            echo<<<data
+              <div class="col-lg-4 col-md-5 my-3">
+                <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+                  <img src="$hotel_thumb" class="card-img-top">
+                  <div class="card-body">
+                    <h5>$hotel_data[name]</h5>
+                    <div class="place">
+                      <h6>Place</h6>
+                      <span class='badge rounded-pill  bg-light text-dark text-wrap me-1 mb-1'>
+                        $hotel_data[place]
+                      </span>
+                    </div>
+                    <div class="Rooms mb-3">
+                      <h6>Rooms</h6>
+                      $room_data
+                    </div>
+                    <div class="d-flex justify-content-evenly mb-2">
+                      <a href="Rooms.php?id=$hotel_data[id]" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-lg-3 mb-3">
-                  <label  class="form-label" style="font-weight: 500;">adults</label>
-                  <select class="form-select shadow-none" >     
-                    <option value="1">1</option>
-                    <option value="2" selected>2</option>
-                    <option value="3">3</option>
-                    <option value="4">3</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>     
-                </div>
-                <div class="col-lg-2 mb-3">
-                  <label  class="form-label" style="font-weight: 500;">children</label>
-                  <select class="form-select shadow-none" >     
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>          
-                  </select> 
-                </div>
-                <div class="col-lg-1 mb-lg-2 mt-2 " >
-                  <button type="submit" class=" btn shadow-none custom-btn-bg my-lg-4 border" >submit</button>
-                </div>
-              </div>           
-            </form>
-          </div>
+              </div>
+            data;
+          }
+        ?>
+        <div class="col-lg-12 text-center mt-5">
+          <a href="hotels.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Hotels >>></a>
         </div>
       </div>
-    <!-- booking availablity End-->
-
-    <!-- Popular Destinations Start-->
-      <div class="container">
-        <h1 class="mt-5 pt-4 mb-4 h-front text-color-black main-text"> Popular Destinations</h1>
-        <br>
-        <div class="swiper Swiper-destination">
-          <div class="swiper-wrapper mb-5 ">
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>    
-    <!-- Popular Destinations End-->
-
-    <!-- Facilities Start-->
-     
-    <!-- Facilities End-->
+     </div>
+    <!-- Hotel End -->
     
     <!-- Reach Us Start -->
       <?php
