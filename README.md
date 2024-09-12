@@ -29,3 +29,15 @@ Tour Planner will organize the details of a trip, where you want to go, what kin
 
 3. **Install VS Code**:
    - Download and install Visual Studio Code from the [official website](https://code.visualstudio.com/).
+
+## Usage
+
+1. **Clone the repository**:
+   ```bash
+   git clone [https://github.com/A-Tonim/CSE-3100.git]
+
+2. **Configure the Database**:
+   - Update the config.php file with your database credentials.
+   
+3. **Run the Application**:
+   - Open your web browser and navigate to http://localhost/CSE-3100.
