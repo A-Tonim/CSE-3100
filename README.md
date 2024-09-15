@@ -41,3 +41,6 @@ Tour Planner will organize the details of a trip, where you want to go, what kin
    
 3. **Run the Application**:
    - Open your web browser and navigate to http://localhost/CSE-3100.
+
+## Project Report:
+   Project Report Link: https://drive.google.com/file/d/1YD7a47YhinBVgMvlOR-skhKe96kopc71/view?usp=drive_link
