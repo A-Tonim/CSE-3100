@@ -1,4 +1,4 @@
-# Tour Planner
+# Tour Planner!
 
 Tour Planner will organize the details of a trip, where you want to go, what kind of hotel you choose and in which room you want to stay in that hotel. Management can customize features, facilities, rooms and add it into the hotel.The application is built using PHP, MySQL, HTML, CSS, BOOTSTRAP AND JAVASCRIPT.
 
